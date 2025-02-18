@@ -29,8 +29,29 @@ propio equipo se relaccionen con los datos del docker:
 - DB_USERNAME=usuario 
 - DB_PASSWORD=usuario 
 - DB_ROOT_PASSWORD=root12345
+
+Y ya que hemos configurado una nueva base de datos en Laravel debemos ejecutar las 
+migraciones con: *php artisan migrate*.
 ### Daisyui
 Para instalarlo primero he hecho un update del composer para liuego instalarlo con el 
 comando **npm i -D daisyui@latest**.
 Además de esto hay que añadirlo al tailwind como plugin.
+
+## Creación de la página inicial
+Para crear la base de este proyecto principalmente en *resources/views/components/layouts*
+se ha de crear los layouts:
+- Layout principal (layout.blade.php) -> El cual recoge el css y los demás layouts para
+mostrarlos, añadiendo ahí también {{$slot}} para mostrar el contenido principal del index.
+- Layout de cabecera (header.blade.php) -> Una cabecera que muestra el titulo de la página
+y un icono de usuario que al pulsarlo se abre un desplegable para realizar el inicio de 
+sesion o registro.
+- Layout manu (nav.blade.php) -> Este, muestra un pequeño menú para navegar por la web.
+- Layout de pie de página (footer.blade.php) -> Un pie de página para darle un cierre visual
+a la página.
+
+**Junto a esto...**
+Situado en *resources/views* se encuentra el index.blade.php, mencionado anteriormente 
+en el cual se ingresará la información desdeada a mostrar en la página inicial ya que se
+configura para que esta página aparezca por defecto. Esto se consigue mediante el archivo
+web.php añadiendo la ruta deseada.
 
