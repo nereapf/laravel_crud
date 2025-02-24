@@ -55,3 +55,13 @@ en el cual se ingresará la información desdeada a mostrar en la página inicia
 configura para que esta página aparezca por defecto. Esto se consigue mediante el archivo
 web.php añadiendo la ruta deseada.
 
+## Inicio de sesión y registro de usuarios
+En la ruta */resources/views/auth* se debe acceder a los archivos de login y register para 
+adquirir los formulario para realizar los registros.
+Este formulario puede ser editado para tener visualmente el formulario a gusto del usuario.
+
+**IMPLEMENTACIÓN DE LOS REGISTROS EN NUESTRO CÓDIGO**
+Para realizar esto, en los enlaces del desplegable ubicados en el header se añade la ruta
+de estos archivos de la sigueinte forma: href="{{route("login")}}".
+
+

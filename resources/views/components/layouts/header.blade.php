@@ -12,12 +12,21 @@
                             src="images/usuario.png"/>
                     </div>
                 </div>
-                <ul
-                    tabindex="0"
-                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                    <li><a>Registrarse</a></li>
-                    <li><a>Iniciar sesión</a></li>
-                </ul>
+                <div class="hidden md:flex flex-row space-x-3">
+                    @auth
+                        <span class="text-white">{{ auth()->user()->name }}
+                        <form action="{{route("logout")}}" method="POST">
+                            @csrf
+                            <input class="btn  btn-glass" type="submit" value="Logout">
+                        </form>
+                    @endauth
+                    @guest
+                        <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a href="{{route("register")}}">Registrarse</a></li>
+                            <li><a href="{{route("login")}}">Iniciar sesión</a></li>
+                        </ul>
+                    @endguest
+                </div>
             </div>
         </div>
     </div>
