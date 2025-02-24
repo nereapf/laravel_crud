@@ -55,6 +55,13 @@ en el cual se ingresará la información desdeada a mostrar en la página inicia
 configura para que esta página aparezca por defecto. Esto se consigue mediante el archivo
 web.php añadiendo la ruta deseada.
 
+## Creacion de estilos con tailwind
+Para tener una pagina visual y colorida como por ejemplo la cabecera, footer y demás podemos
+gracias a tailwind, crear colores personalizados para luego poder aplicarlos con clases a
+los elementos que necesitemos.
+Esto se consigue en el archivo de tailwind.config.js:
+- Creando al igual que el tipo de texto, la configuracion 'colors'
+
 ## Inicio de sesión y registro de usuarios
 En la ruta */resources/views/auth* se debe acceder a los archivos de login y register para 
 adquirir los formulario para realizar los registros.
@@ -62,6 +69,10 @@ Este formulario puede ser editado para tener visualmente el formulario a gusto d
 
 **IMPLEMENTACIÓN DE LOS REGISTROS EN NUESTRO CÓDIGO**
 Para realizar esto, en los enlaces del desplegable ubicados en el header se añade la ruta
-de estos archivos de la sigueinte forma: href="{{route("login")}}".
+de estos archivos de la siguiente forma: href="{{route("login")}}".
+
+Hay que tener en cuenta también que al realizar el inicio de sesión nos rediriga a la
+página inicial, por lo que esto se conseguirá desde el controlador de la autenticación de 
+usuario ubicado en *app/http/auth/AuthenticatedSessionController.php*
 
 

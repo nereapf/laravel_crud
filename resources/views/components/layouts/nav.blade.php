@@ -1,10 +1,10 @@
 <nav class="flex justify-center items-center m-4">
-    <ul class="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+    <ul class="menu menu-vertical lg:menu-horizontal bg-moradoClaro rounded-box">
         <li>
-            <a>
+            <a class="hover:bg-moradoFondo">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    class="h-5 w-5 text-moradoOscuro"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -16,8 +16,8 @@
                 </svg>
             </a>
         </li>
-        <li><a>Proyectos</a></li>
-        <li><a>Alumnos</a></li>
+        <li><a class="text-moradoOscuro hover:bg-moradoFondo">Proyectos</a></li>
+        <li><a class="text-moradoOscuro hover:bg-moradoFondo">Alumnos</a></li>
     </ul>
 </nav>
 
