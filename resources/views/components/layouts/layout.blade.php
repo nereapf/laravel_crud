@@ -10,7 +10,6 @@
 </head>
 <body class="flex flex-col min-h-screen">
 <x-layouts.header />
-<x-layouts.nav />
 <main class="flex-1">
     {{$slot}}
 </main>
