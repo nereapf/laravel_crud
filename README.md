@@ -75,4 +75,15 @@ Hay que tener en cuenta también que al realizar el inicio de sesión nos rediri
 página inicial, por lo que esto se conseguirá desde el controlador de la autenticación de 
 usuario ubicado en *app/http/auth/AuthenticatedSessionController.php*
 
-
+## CRUD de proyectos
+### Creación del modelo y migración
+El modelo junto con su migración sirve para crear tablas en la base de datos y poder modificarlas
+e interactuar con ellas.
+Pasos a seguir para esta configuración:
+- Creación del modelo (php artisan make:Model Proyecto -a)
+**Gracias al '-a' en el modelo ya se crean tanto el seeder, como el controller, el factory
+y la migración**
+- Configuración de la migración ubicada en *database/migrations/create_proyectos_table.php*
+donde se crean los campos que va a tener la tabla en la base de datos 
+- Se crea el modelo ubicado en *app/models/proyecto.php* para poder asignar todos los datos
+- Una vez todo configurado, se ejecuta la migracion (php artisan migrate) para crear la tabla
