@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Proyecto;
 use App\Http\Requests\StoreProyectoRequest;
 use App\Http\Requests\UpdateProyectoRequest;
+use Illuminate\Support\Facades\Schema;
 
 class ProyectoController extends Controller
 {
@@ -13,7 +14,11 @@ class ProyectoController extends Controller
      */
     public function index()
     {
-        //
+        $campos = Schema::getColumnListing('proyectos');
+        $exclude =["created_at","updated_at"];
+        $campos = array_diff($campos,$exclude);
+        $filas = Proyecto::select($campos)->get();
+        return view('proyectos.index',compact('filas','campos'));
     }
 
     /**
@@ -21,7 +26,7 @@ class ProyectoController extends Controller
      */
     public function create()
     {
-        //
+        return view("proyectos.create");
     }
 
     /**
@@ -29,7 +34,12 @@ class ProyectoController extends Controller
      */
     public function store(StoreProyectoRequest $request)
     {
-        //
+        $datos = $request->only("titulo","horas_previstas","fecha_de_comienzo");
+        $proyecto = new Proyecto($datos);
+        $proyecto->save();
+
+        session()->flash("mensaje","Proyecto $proyecto->titulo creado.");
+        return redirect()->route('proyectos.index');
     }
 
     /**
@@ -45,7 +55,7 @@ class ProyectoController extends Controller
      */
     public function edit(Proyecto $proyecto)
     {
-        //
+        return view('proyectos.edit',compact('proyecto'));
     }
 
     /**
@@ -53,7 +63,9 @@ class ProyectoController extends Controller
      */
     public function update(UpdateProyectoRequest $request, Proyecto $proyecto)
     {
-        //
+        $proyecto->update($request->input());
+        session()->flash("mensaje","Proyecto $proyecto->titulo actualizado.");
+        return redirect()->route('proyectos.index');
     }
 
     /**
@@ -61,6 +73,8 @@ class ProyectoController extends Controller
      */
     public function destroy(Proyecto $proyecto)
     {
-        //
+        $proyecto->delete();
+        session()->flash("mensaje","Proyecto $proyecto->titulo eliminado.");
+        return redirect()->route('proyectos.index');
     }
 }

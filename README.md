@@ -87,3 +87,32 @@ y la migración**
 donde se crean los campos que va a tener la tabla en la base de datos 
 - Se crea el modelo ubicado en *app/models/proyecto.php* para poder asignar todos los datos
 - Una vez todo configurado, se ejecuta la migracion (php artisan migrate) para crear la tabla
+
+### Creación del crud
+1. Crear las rutas del crud para el controlador en *routes/web.php* para que solo los
+usuarios autenticados puedan acceder.
+- Route::resource('proyectos', ProyectoController::class)->middleware('auth');
+2. Creación de la carpeta proyectos en *resources/views* para poder crear los archivos
+dedicados a los proyectos, como la creación del formulario para añadir proyectos nuevos.
+3. En la carpeta PROYECTOS se deben crear unos archivos para mostrar las tablas (index), 
+crear proyectos (create), editar los proyectos existentes (edit)...
+- Create: Creación de un formulario que recoge los datos y llama al store del controlador 
+para poder guardarlos en la base de datos. 
+- Index: Tabla donde se muestran todos los proyectos donde se podrán visualizar, editar, borrar y añadir.
+4. Acceder al controlador para hacer que las funciones devuelvan la vista de estos archivos creados
+anteriormente.
+*Index*: Recoger de la base de datos los campos y las filas de la tabla para luego mostrarla.
+*Create*: Devolver la vista de los arcivos de proyectos.
+*Store*: Guarda los datos en la base de datos y redirecciona de vuelta al index con la tabla.
+*Edit*: Devuelve el formulario de manera que puedas editar el proyecto especificado.
+*Update*: Actualiza los datos del proyecto y guarda los nuevos datos en la base de datos.
+*Destroy*: Elimina el proyecto seleccionado de la base de datos.
+5. **CREAR UN NUEVO PROYECTO** - Para hacer esto, se crea tanto el archivo create, como la funcion
+create y store del controlador.
+Para que la función *store* funcine también debemos configrar el archivo StoreProyectoRequest.php para 
+introducir los campos a la hora de crear el proyecto. Además también se podrá añadir en el archivo una
+función para poder mostrar los mensajes de error cuando un campo sea erróneo a la hora de crearlo.
+6. Añadir la ruta para que al pulsar el boton *proyectos* del nav te redirija a proyectos.index
+- Implementar el href a los botones para redirigirlos (nav.blade.php)
+
+

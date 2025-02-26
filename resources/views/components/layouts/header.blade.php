@@ -8,9 +8,9 @@
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">
                         @auth
-                            <img alt="Usuario registrado" src="images/registrado.png" />
+                            <img alt="Usuario registrado" src="/images/registrado.png" />
                         @else
-                            <img alt="Usuario invitado" src="images/usuario.png" />
+                            <img alt="Usuario invitado" src="/images/usuario.png" />
                         @endauth
                     </div>
                 </div>
