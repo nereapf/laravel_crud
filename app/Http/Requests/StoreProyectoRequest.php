@@ -24,7 +24,7 @@ class StoreProyectoRequest extends FormRequest
         return [
             'titulo' => 'required|string|max:100|unique:proyectos,titulo',
             'horas_previstas' => 'required|integer|min:1',
-            'fecha_de_comienzo' => 'required|date',
+            'fecha_de_comienzo' => 'required|date|before:today',
         ];
     }
 

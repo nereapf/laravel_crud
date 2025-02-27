@@ -109,10 +109,21 @@ anteriormente.
 *Destroy*: Elimina el proyecto seleccionado de la base de datos.
 5. **CREAR UN NUEVO PROYECTO** - Para hacer esto, se crea tanto el archivo create, como la funcion
 create y store del controlador.
-Para que la función *store* funcine también debemos configrar el archivo StoreProyectoRequest.php para 
-introducir los campos a la hora de crear el proyecto. Además también se podrá añadir en el archivo una
-función para poder mostrar los mensajes de error cuando un campo sea erróneo a la hora de crearlo.
-6. Añadir la ruta para que al pulsar el boton *proyectos* del nav te redirija a proyectos.index
+Para que la función *store* funcine también debemos configrar el archivo *StoreProyectoRequest.php* para 
+introducir los campos a la hora de crear el proyecto. Además también se podrá tanto autorizar los permisos 
+como añadir en el archivo una función para poder mostrar los mensajes de error cuando un campo sea erróneo
+a la hora de crearlo.
+6.  **EDITAR UN NUEVO PROYECTO** - Para ello primero de todo creamos en el index (dentro de la tabla) un 
+botón para poder editar específicamente uno de los proyectos.
+Además, en el controler llamaremos a las funiones de edit y update para editar y actualizar la tabla, y
+crearemos en la carpeta proyectos el *edit.blade.php*, donde se creará un formulario para poder cambiar
+los datos. Junto a esto para que la funcion update funcione, se debe configurar el archivo 
+*UpdateProyectoRequest.php* para que al igual que en el store, introduzca los datos, cree los mensajes de
+error para los campos que sean erróneos y autorice los permisos.
+7. Añadir la ruta para que al pulsar el boton *proyectos* del nav te redirija a proyectos.index
 - Implementar el href a los botones para redirigirlos (nav.blade.php)
+8. Junto a esto se implementarán también unos mensajes, que se mostrarán cuando se haya realizado una de
+las acciones, esto se realiza a través del controller almacenado los valores y el mensaje, y llamandole 
+desde el index para mostrarlo además de aplicarle una transición de desaparición con js.
 
 

@@ -38,7 +38,7 @@ class ProyectoController extends Controller
         $proyecto = new Proyecto($datos);
         $proyecto->save();
 
-        session()->flash("mensaje","Proyecto $proyecto->titulo creado.");
+        session()->flash("mensaje","El proyecto $proyecto->titulo ha sido creado.");
         return redirect()->route('proyectos.index');
     }
 
@@ -64,7 +64,7 @@ class ProyectoController extends Controller
     public function update(UpdateProyectoRequest $request, Proyecto $proyecto)
     {
         $proyecto->update($request->input());
-        session()->flash("mensaje","Proyecto $proyecto->titulo actualizado.");
+        session()->flash("mensaje","El proyecto $proyecto->titulo se ha actualizado.");
         return redirect()->route('proyectos.index');
     }
 
@@ -74,7 +74,7 @@ class ProyectoController extends Controller
     public function destroy(Proyecto $proyecto)
     {
         $proyecto->delete();
-        session()->flash("mensaje","Proyecto $proyecto->titulo eliminado.");
+        session()->flash("mensaje","El proyecto $proyecto->titulo ha sido eliminado.");
         return redirect()->route('proyectos.index');
     }
 }
