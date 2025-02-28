@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('proyectos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo')->unique();
-            $table->integer('horas_previstas')->nullable();
-            $table->date('fecha_de_comienzo')->nullable();
+            $table->integer('horas_previstas');
+            $table->date('fecha_de_comienzo');
             $table->timestamps();
         });
     }

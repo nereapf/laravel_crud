@@ -24,7 +24,7 @@
             </div>
             <div>
                 <x-input-label for="fecha_de_comienzo" value="Fecha de comienzo:"/>
-                <x-text-input id="fecha_de_comienzo" class="block mt-1 w-full" type="date" name="fecha_de_comienzo" value="{{old('fecha_de_comienzo')}}"/>
+                <x-text-input id="fecha_de_comienzo" class="block mt-1 w-full" type="date" name="fecha_de_comienzo"/>
                 @error("fecha_de_comienzo")
                 <div class="text-sm text-red-600">
                     {{$message}}

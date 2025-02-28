@@ -9,5 +9,5 @@ class Proyecto extends Model
 {
     /** @use HasFactory<\Database\Factories\ProyectoFactory> */
     use HasFactory;
-    public $fillable = ["titulo", "horas_previstas", "fecha_de_comiezo"];
+    public $fillable = ["titulo", "horas_previstas", "fecha_de_comienzo"];
 }
