@@ -1,7 +1,7 @@
 <header>
     <div class="navbar bg-moradoFondo">
         <div class="flex-1">
-            <h1 class="text-xl font-bold text-moradoLogo ml-5">Gestión de Proyectos Académicos</h1>
+            <h1 class="text-xl font-bold text-moradoLogo ml-5">{{__("Gestión de Proyectos Académicos")}}</h1>
         </div>
         <div class="mr-2">
             <div class="dropdown dropdown-content">

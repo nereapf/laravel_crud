@@ -1,7 +1,7 @@
 <x-layouts.layout>
     <x-layouts.nav />
     <div class="max-w-lg mx-auto my-10 p-6 rounded-lg shadow-lg">
-        <form action="{{route("proyectos.update", $proyecto->id)}}" method="POST" class="mt-4">
+        <form onsubmit=event.preventDefault() action="{{route("proyectos.update", $proyecto->id)}}" id="formulario{{$proyecto->id}}" method="POST" class="mt-4">
             @method('PUT')
             @csrf
             <div>
@@ -35,10 +35,26 @@
                 @enderror
             </div>
             <div class="p-2 flex space-x-2">
-                <button type="submit" class="mt-6 bg-moradoLogo text-white px-6 py-2 rounded-lg hover:bg-moradoOscuro">Guardar</button>
+                <button type="button" onclick="confirmUpdate({{$proyecto->id}})" class="mt-6 bg-moradoLogo text-white px-6 py-2 rounded-lg hover:bg-moradoOscuro">
+                    Guardar
+                </button>
                 <a class="mt-6 bg-gray-300 text-black px-6 py-2 rounded-lg hover:bg-gray-400" href="{{ route('proyectos.index') }}">Cancelar</a>
             </div>
         </form>
     </div>
-
+    <script>
+        function confirmUpdate (id){
+            swal({
+                title:"¿Deseas actualizar este proyecto?",
+                text:"Esta acción no se podrá deshacer",
+                icon: "warning",
+                buttons:true
+            }).then(function (ok){
+                if (ok) {
+                    let formulario = document.getElementById("formulario" + id);
+                    formulario.submit();
+                }
+            })
+        }
+    </script>
 </x-layouts.layout>

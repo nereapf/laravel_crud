@@ -120,11 +120,21 @@ crearemos en la carpeta proyectos el *edit.blade.php*, donde se creará un formu
 los datos. Junto a esto para que la funcion update funcione, se debe configurar el archivo 
 *UpdateProyectoRequest.php* para que al igual que en el store, introduzca los datos, cree los mensajes de
 error para los campos que sean erróneos y autorice los permisos.
+- Junto a la actualización de un proyecto implementaremos una confirmación antes de realizar la acción con
+la librería de sewwtalert.
+  - Instalaremos la librería (npm install sweetalert --save)
+  - Incluimos la libreria en app.js
+  - Acceder a *edit.blade.php* para llamar a la funcion en el formulario y cuando haga click al boton de 
+  "Guardar" pida la confirmación.
 7. **ELIMINAR UN PROYECTO** - Para ello primero como al editar, creamos en el index (dentro de la tabla) un
 botón para poder eliminar específicamente uno de los proyectos. Para borrarlo simplemente se crea un
 formulario donde se ubica el boton para que cuando haga click confirme si se quiere borrar mediate una 
 funcion de javascript y si esta se confirma se elimina de la base de datos y la tabla a través del id.
 Además, necesitaremos en el controler a la funcion destroy para poder eliminarlo.
+- Al igual que en la actualización, en la eliminación de un proyecto implementaremos una confirmación 
+antes de realizar la acción con la librería de sewwtalert.
+  - Como la librería ya esta intalada simplemente habría que crear el codigo de js para el alert de
+  confirmación e implemntarlo en la tabla.
 8. Añadir la ruta para que al pulsar el boton *proyectos* del nav te redirija a proyectos.index
 - Implementar el href a los botones para redirigirlos (nav.blade.php)
 9. Junto a esto se implementarán también unos mensajes, que se mostrarán cuando se haya realizado una de
