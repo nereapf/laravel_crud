@@ -33,7 +33,7 @@ propio equipo se relaccionen con los datos del docker:
 Y ya que hemos configurado una nueva base de datos en Laravel debemos ejecutar las 
 migraciones con: *php artisan migrate*.
 ### Daisyui
-Para instalarlo primero he hecho un update del composer para liuego instalarlo con el 
+Para instalarlo primero he hecho un update del composer para luego instalarlo con el 
 comando **npm i -D daisyui@latest**.
 Además de esto hay que añadirlo al tailwind como plugin.
 
@@ -130,5 +130,23 @@ Además, necesitaremos en el controler a la funcion destroy para poder eliminarl
 9. Junto a esto se implementarán también unos mensajes, que se mostrarán cuando se haya realizado una de
 las acciones, esto se realiza a través del controller almacenado los valores y el mensaje, y llamandole 
 desde el index para mostrarlo además de aplicarle una transición de desaparición con js.
+
+## Implementacion de cambio de idiomas en la página
+Primero hay que instalar el paquete de los lenguajes, publicar los idiomas e ir instalando los idiomas
+concretos que queremos en la página (todo esto a través de la consola):
+- composer require laravel-lang/lang
+- php artisan lang:publish
+- php artisan lang:add es // php artisan lang:add en
+Junto a esto pondremos como idioma local en el .env el español.
+Creamos un layout para implementar la seleccion de los idiomas y este lo implementamos en la seccion del
+inicio.
+Ahora se crea en *config/languages.php* para ubicar el texto y banderas de los idiomas correspondientes y un
+CONTROLLER para acceder a los contenidos.
+Para tener un idioma por defecto y guardar el idioma establecido creamos un MIDDLEWARE, para verificar que
+las reglas son correctas y pueda funcionar con normalidad. Para que el middleware se ejecute tenemos que 
+añadirlo en *bootstrap/app.php*.
+Finalmente añadimos en web.php la ruta para que recoja los lenguajes y para cambiar el texto escrito a otro
+de los idiomas lo cambiaremos en los archivos json de cada idioma y a la hora de escribirlo en los layouts
+en vez de poner el texto lo llamsremos con {{__("nombre_del texto")}}.
 
 

@@ -3,7 +3,12 @@
         <div class="flex-1">
             <h1 class="text-xl font-bold text-moradoLogo ml-5">Gestión de Proyectos Académicos</h1>
         </div>
-        <div class="flex-none gap-2 mr-2">
+        <div class="mr-2">
+            <div class="dropdown dropdown-content">
+                <x-layouts.lang />
+            </div>
+        </div>
+        <div class="mr-2">
             <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">

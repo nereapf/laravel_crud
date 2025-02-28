@@ -1,0 +1,16 @@
+<?php
+return[
+    "es"=>[
+        "name"=>"es",
+        "idioma"=>"Español",
+    ],
+    "en"=>[
+        "name"=>"en",
+        "idioma"=>"Inglés",
+    ],
+    "fr"=>[
+        "name"=>"fr",
+        "idioma"=>"Francés",
+    ]
+]
+?>
