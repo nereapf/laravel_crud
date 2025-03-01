@@ -17,7 +17,7 @@
             </a>
         </li>
         <li><a class="text-moradoOscuro hover:bg-moradoFondo" href="{{route("proyectos.index")}}">{{__("Proyectos")}}</a></li>
-        <li><a class="text-moradoOscuro hover:bg-moradoFondo">{{__("Alumnos")}}</a></li>
+        <li><a class="text-moradoOscuro hover:bg-moradoFondo" href="{{route("alumnos.index")}}">{{__("Alumnos")}}</a></li>
     </ul>
 </nav>
 

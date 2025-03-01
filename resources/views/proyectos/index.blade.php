@@ -20,15 +20,22 @@
                 @foreach($campos as $campo)
                     <th class="px-4 py-2">{{ __($campo) }}</th>
                 @endforeach
-                <th></th><th></th>
+                <th></th><th></th><th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($filas as $fila)
-                <tr class="border-t-2 border-moradoClaro">
+                <tr class="border-t-2 border-moradoClaro first:border-none">
                     @foreach($campos as $campo)
-                        <td class="px-4 py-2 text-center">{{ $fila->$campo }}</td>
+                        <td class="py-2 pb-3 text-center">{{ $fila->$campo }}</td>
                     @endforeach
+                    <td>
+                        <a href="{{route('proyectos.show', $fila->id)}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:text-purple-900 size-7">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14c3.866 0 7 1.343 7 3v2H5v-2c0-1.657 3.134-3 7-3zm0-10a4 4 0 110 8 4 4 0 010-8z"/>
+                            </svg>
+                        </a>
+                    </td>
                     <td>
                         <a href="{{route("proyectos.edit", $fila->id)}}">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:text-green-700 size-6">
@@ -46,11 +53,6 @@
                                 </svg>
                             </button>
                         </form>
-                    </td>
-                    <td>
-                        <a href="{{route("proyectos.show", $fila->id)}}">
-                            <p>a</p>
-                        </a>
                     </td>
                 </tr>
             @endforeach

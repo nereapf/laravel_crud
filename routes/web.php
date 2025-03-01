@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::resource('proyectos', ProyectoController::class)->middleware('auth');
+Route::resource('alumnos', AlumnoController::class)->middleware('auth');
 
 Route::get("lang/{language}", LanguageController::class)->name('language');
 require __DIR__.'/auth.php';

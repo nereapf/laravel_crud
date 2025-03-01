@@ -186,5 +186,13 @@ se añadan a ese proyecto de 1 a 5 alumnos participantes. A través del *control
 Proyectos en la función STORE se añade la creación de un numero random de alumnos a ese
 proyecto asignandole la clave foranea y a través del *factory* del alumno crearemos los datos
 aleatorios.
-
-
+### Visualización de los alumnos
+Junto a la relación de las tablas también vamos a crear una sección para visualizar la tabla
+de alumnos de la base de datos para ver todos los alumnos que participan en algun proyecto.
+Para esto se crea una carpeta ALUMNOS y un *index.blade.php* para mostrar una tabla visual
+de los alumnos de la base de datos.
+Además en *AlumnoController.php* se debe añadir la funcion de index para obtener los alumnos
+y poder mostrarlos y en *web.php* añadir la ruta con el controlador para poder acceder a 
+ellos.
+Y finalmente para poder accceder a esa tabla es decir ver el index, en el layout del nav, 
+en el boton de alumnos implementamos la ruta alumnos.index.
