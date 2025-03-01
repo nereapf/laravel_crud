@@ -9,7 +9,6 @@
 
 # DOCUMENTACIÓN LARAVEL
 ## Instalación y añadirlo a github
-
 laravel new nombre
 git init
 git add .
@@ -17,6 +16,7 @@ git commit -m "nombre"
 git branch -M main
 git remote add origin "https o ssh"
 git push origin main
+
 
 ## Primeros cambios generales
 ### Docker compose
@@ -37,6 +37,7 @@ Para instalarlo primero he hecho un update del composer para luego instalarlo co
 comando **npm i -D daisyui@latest**.
 Además de esto hay que añadirlo al tailwind como plugin.
 
+
 ## Creación de la página inicial
 Para crear la base de este proyecto principalmente en *resources/views/components/layouts*
 se ha de crear los layouts:
@@ -55,12 +56,14 @@ en el cual se ingresará la información desdeada a mostrar en la página inicia
 configura para que esta página aparezca por defecto. Esto se consigue mediante el archivo
 web.php añadiendo la ruta deseada.
 
+
 ## Creacion de estilos con tailwind
 Para tener una pagina visual y colorida como por ejemplo la cabecera, footer y demás podemos
 gracias a tailwind, crear colores personalizados para luego poder aplicarlos con clases a
 los elementos que necesitemos.
 Esto se consigue en el archivo de tailwind.config.js:
 - Creando al igual que el tipo de texto, la configuracion 'colors'
+
 
 ## Inicio de sesión y registro de usuarios
 En la ruta */resources/views/auth* se debe acceder a los archivos de login y register para 
@@ -74,6 +77,7 @@ de estos archivos de la siguiente forma: href="{{route("login")}}".
 Hay que tener en cuenta también que al realizar el inicio de sesión nos rediriga a la
 página inicial, por lo que esto se conseguirá desde el controlador de la autenticación de 
 usuario ubicado en *app/http/auth/AuthenticatedSessionController.php*
+
 
 ## CRUD de proyectos
 ### Creación del modelo y migración
@@ -141,6 +145,7 @@ antes de realizar la acción con la librería de sewwtalert.
 las acciones, esto se realiza a través del controller almacenado los valores y el mensaje, y llamandole 
 desde el index para mostrarlo además de aplicarle una transición de desaparición con js.
 
+
 ## Implementacion de cambio de idiomas en la página
 Primero hay que instalar el paquete de los lenguajes, publicar los idiomas e ir instalando los idiomas
 concretos que queremos en la página (todo esto a través de la consola):
@@ -160,5 +165,26 @@ de los idiomas lo cambiaremos en los archivos json de cada idioma y a la hora de
 en vez de poner el texto lo llamsremos con {{__("nombre_del texto")}}, excepto si se llama
 al escribirlo dentro de un value que se llamara simplemente con __("nombre_del_texto").
 
-{{__("")}}
+
+## Relacion 1:N
+Crearemos otra tabla de alumnos donde en un proyecto puedan trabajar N alumnos, pero un 
+alumno solo pueda trabajar en 1 proyecto.
+Para ello crearemos el modelo donde gracias al '-a' en el modelo ya se crean tanto el seeder,
+como el controller, el factory y la migración (php artisan make:Model Alumno -a)
+1. Primero hay que crear los campos de la tabla en la nueva *migración* añadiendo un campo 
+como clave foranea, que en este caso será el id del proyecto para que estas tablas puedan
+relaccionarse. (realizar un php artisan migrate para crear la tabla en la base de datos)
+2. Hay que definir las relacciones y eso se realizará en los *modelos*:
+- En Proyecto.php: Función para mostrar que un proyecto tiene muchos alumnos
+- En Alumno.php: Función para mostrar que un alumno pertenece a un solo proyecto
+3. Mostraremos los alumnos en la tabla de proyectos mediante un boton similar al de editar y
+borrar proyectos. Se realiza en el index mediante la ruta proyectos.show del controller y 
+creando *show.blade.php* dentro de la carpeta de proyectos (aqui se mostrarán los alumnos 
+por pantalla).
+4. Para automatizar la relacion de las tablas haremos que cada vez que se cree un proyecto,
+se añadan a ese proyecto de 1 a 5 alumnos participantes. A través del *controlador* de 
+Proyectos en la función STORE se añade la creación de un numero random de alumnos a ese
+proyecto asignandole la clave foranea y a través del *factory* del alumno crearemos los datos
+aleatorios.
+
 

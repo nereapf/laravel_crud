@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alumno;
 use App\Models\Proyecto;
 use App\Http\Requests\StoreProyectoRequest;
 use App\Http\Requests\UpdateProyectoRequest;
@@ -38,6 +39,11 @@ class ProyectoController extends Controller
         $proyecto = new Proyecto($datos);
         $proyecto->save();
 
+        Alumno::factory(rand(1, 5))->create([
+            'proyecto_id' => $proyecto->id
+        ]);
+
+        $proyecto->save();
         session()->flash("mensaje","El proyecto $proyecto->titulo ha sido creado.");
         return redirect()->route('proyectos.index');
     }
@@ -47,7 +53,7 @@ class ProyectoController extends Controller
      */
     public function show(Proyecto $proyecto)
     {
-        //
+        return view('proyectos.show',compact('proyecto'));
     }
 
     /**

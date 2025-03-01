@@ -10,4 +10,8 @@ class Proyecto extends Model
     /** @use HasFactory<\Database\Factories\ProyectoFactory> */
     use HasFactory;
     public $fillable = ["titulo", "horas_previstas", "fecha_de_comienzo"];
+
+    public function alumnos(){
+        return $this->hasMany(Alumno::class);
+    }
 }

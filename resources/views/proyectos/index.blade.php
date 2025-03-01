@@ -47,6 +47,11 @@
                             </button>
                         </form>
                     </td>
+                    <td>
+                        <a href="{{route("proyectos.show", $fila->id)}}">
+                            <p>a</p>
+                        </a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>
