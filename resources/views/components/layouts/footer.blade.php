@@ -36,8 +36,8 @@
             </a>
         </div>
     </nav>
-    <aside>
-        <p class="text-moradoOscuro">Copyright © {{ now()->year }} - All right reserved by ACME Industries Ltd</p>
-        <b class="text-moradoLogo">Providing reliable tech since 1992</b>
+    <aside class="text-center mt-6">
+        <p class="text-moradoOscuro">{{ __("Copyright © :year - All right reserved by ACME Industries Ltd", ['year' => now()->year]) }}</p>
+        <b class="text-moradoLogo">{{ __("Providing reliable tech since 1992") }}</b>
     </aside>
 </footer>

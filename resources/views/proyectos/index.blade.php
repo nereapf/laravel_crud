@@ -8,17 +8,17 @@
         </div>
     @endif
     <div class="p-5 flex">
-        <a class="btn btn-sm bg-moradoLogo text-white rounded-md hover:bg-moradoOscuro"
-           href="{{ route('proyectos.create') }}">Nuevo Proyecto</a>
-        <h1 class="text-2xl font-bold text-moradoOscuro ml-56 flex-1">
-            Administración de proyectos de la base de datos</h1>
+        <a class="btn btn-sm bg-moradoLogo text-white rounded-md hover:bg-moradoOscuro w-50"
+           href="{{ route('proyectos.create') }}">{{ __('Nuevo Proyecto') }}</a>
+        <h1 class="text-2xl font-bold text-moradoOscuro text-center mr-32 flex-1">
+            {{ __('Administración de proyectos de la base de datos') }}</h1>
     </div>
     <div class="flex justify-center mt-5 mb-20">
         <table class="w-3/4 border shadow-lg rounded-lg overflow-hidden">
             <thead>
             <tr class="bg-moradoOscuro text-white text-center">
                 @foreach($campos as $campo)
-                    <th class="px-4 py-2">{{$campo}}</th>
+                    <th class="px-4 py-2">{{ __($campo) }}</th>
                 @endforeach
                 <th></th><th></th>
             </tr>
@@ -27,7 +27,7 @@
             @foreach($filas as $fila)
                 <tr class="border-t-2 border-moradoClaro">
                     @foreach($campos as $campo)
-                        <td class="px-4 py-2 text-center">{{$fila->$campo}}</td>
+                        <td class="px-4 py-2 text-center">{{ $fila->$campo }}</td>
                     @endforeach
                     <td>
                         <a href="{{route("proyectos.edit", $fila->id)}}">
@@ -64,13 +64,13 @@
             }
         }, 4000);
 
-        function confirmDelete (id){
+        function confirmDelete(id) {
             swal({
-                title:"¿Deseas eliminar este proyecto?",
-                text:"Esta acción no se podrá deshacer",
+                title: "{{ __('¿Deseas eliminar este proyecto?') }}",
+                text: "{{ __('Esta acción no se podrá deshacer') }}",
                 icon: "warning",
-                buttons:true
-            }).then(function (ok){
+                buttons: true
+            }).then(function (ok) {
                 if (ok) {
                     let formulario = document.getElementById("formulario" + id);
                     formulario.submit();

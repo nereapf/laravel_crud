@@ -13,9 +13,9 @@
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
                     <div class="w-10 rounded-full">
                         @auth
-                            <img alt="Usuario registrado" src="/images/registrado.png" />
+                            <img alt="{{ __('Usuario registrado')}}" src="/images/registrado.png" />
                         @else
-                            <img alt="Usuario invitado" src="/images/usuario.png" />
+                            <img alt="{{ __('Usuario invitado')}}" src="/images/usuario.png" />
                         @endauth
                     </div>
                 </div>
@@ -26,15 +26,15 @@
                             <li>
                                 <form action="{{route("logout")}}" method="POST">
                                     @csrf
-                                    <input type="submit" value="Cerrar sesión">
+                                    <input type="submit" value="{{ __('Cerrar sesión') }}">
                                 </form>
                             </li>
                         </ul>
                     @endauth
                     @guest
                         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a href="{{route("register")}}">Registrarse</a></li>
-                            <li><a href="{{route("login")}}">Iniciar sesión</a></li>
+                            <li><a href="{{route("register")}}">{{ __('Registrarse')}}</a></li>
+                            <li><a href="{{route("login")}}">{{ __('Iniciar sesión')}}</a></li>
                         </ul>
                     @endguest
                 </div>

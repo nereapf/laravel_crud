@@ -134,7 +134,7 @@ Además, necesitaremos en el controler a la funcion destroy para poder eliminarl
 - Al igual que en la actualización, en la eliminación de un proyecto implementaremos una confirmación 
 antes de realizar la acción con la librería de sewwtalert.
   - Como la librería ya esta intalada simplemente habría que crear el codigo de js para el alert de
-  confirmación e implemntarlo en la tabla.
+  confirmación e implementarlo en la tabla ubicada en el index.
 8. Añadir la ruta para que al pulsar el boton *proyectos* del nav te redirija a proyectos.index
 - Implementar el href a los botones para redirigirlos (nav.blade.php)
 9. Junto a esto se implementarán también unos mensajes, que se mostrarán cuando se haya realizado una de
@@ -157,6 +157,8 @@ las reglas son correctas y pueda funcionar con normalidad. Para que el middlewar
 añadirlo en *bootstrap/app.php*.
 Finalmente añadimos en web.php la ruta para que recoja los lenguajes y para cambiar el texto escrito a otro
 de los idiomas lo cambiaremos en los archivos json de cada idioma y a la hora de escribirlo en los layouts
-en vez de poner el texto lo llamsremos con {{__("nombre_del texto")}}.
+en vez de poner el texto lo llamsremos con {{__("nombre_del texto")}}, excepto si se llama
+al escribirlo dentro de un value que se llamara simplemente con __("nombre_del_texto").
 
+{{__("")}}
 

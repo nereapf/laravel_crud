@@ -16,8 +16,8 @@
                 </svg>
             </a>
         </li>
-        <li><a class="text-moradoOscuro hover:bg-moradoFondo" href="{{route("proyectos.index")}}">Proyectos</a></li>
-        <li><a class="text-moradoOscuro hover:bg-moradoFondo">Alumnos</a></li>
+        <li><a class="text-moradoOscuro hover:bg-moradoFondo" href="{{route("proyectos.index")}}">{{__("Proyectos")}}</a></li>
+        <li><a class="text-moradoOscuro hover:bg-moradoFondo">{{__("Alumnos")}}</a></li>
     </ul>
 </nav>
 
