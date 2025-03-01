@@ -2,7 +2,8 @@
     <x-layouts.nav />
     <div class="p-5">
         <h1 class="text-2xl font-bold text-moradoOscuro text-center flex-1">
-            Alumnos participantes de nuestros proyectos</h1>
+            {{ __("Alumnos participantes de nuestros proyectos") }}
+        </h1>
     </div>
     <div class="flex justify-center mt-5 mb-20">
         <table class="w-3/4 border shadow-lg rounded-lg overflow-hidden">

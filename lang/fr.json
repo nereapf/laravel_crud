@@ -118,5 +118,9 @@
     "¿Deseas actualizar este proyecto?": "Voulez-vous mettre à jour ce projet?",
     "Esta acción no se podrá deshacer": "Cette action ne pourra pas être annulée", "Nuevo Proyecto": "Nouveau Projet",
     "Administración de proyectos de la base de datos": "Gestion de la base de données des projets",
-    "¿Deseas eliminar este proyecto?": "Voulez-vous supprimer ce projet?"
+    "¿Deseas eliminar este proyecto?": "Voulez-vous supprimer ce projet?",
+    "Alumnos que trabajan en este proyecto:": "Étudiants travaillant sur ce projet :",
+    "Sin alumnos.": "Aucun étudiant.",
+    "años": "ans",
+    "Alumnos participantes de nuestros proyectos": "Étudiants participant à nos projets"
 }
