@@ -210,3 +210,8 @@ para que recoga el texto introducido en el input y ejecute una funcion para reco
 las filas de la tabla e ir comparandolas con el texto introducido cada vez que se escribe
 en el input, para mostrarlo con display o por el contrario no mostrarlos.
 Esto lo realizaremos tanto en la tabla de proyectos como en la de los alumnos.
+
+### Contador de proyectos y alumnos
+En el index de cada tabla implementaremos el contador visualmente, y este se realizará en el
+*controller* del mismo creando unua variable que almacene el número de proyectos en la 
+base de datos.

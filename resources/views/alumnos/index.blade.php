@@ -9,6 +9,11 @@
         <input type="text" id="buscar" placeholder="🔍 {{ __('Buscar alumno...') }}"
                class="w-1/3 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-moradoOscuro">
     </div>
+    <div class="mx-44 -my-3">
+        <h2 class="font-bold text-gray-600">
+            {{__('Alumnos totales: ')}}{{$totalAlumnos}}
+        </h2>
+    </div>
     <div class="flex justify-center mt-5 mb-20">
         <table class="w-3/4 border shadow-lg rounded-lg overflow-hidden">
             <thead>

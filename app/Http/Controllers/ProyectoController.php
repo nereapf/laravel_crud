@@ -19,7 +19,10 @@ class ProyectoController extends Controller
         $exclude =["created_at","updated_at"];
         $campos = array_diff($campos,$exclude);
         $filas = Proyecto::select($campos)->get();
-        return view('proyectos.index',compact('filas','campos'));
+
+        $totalProyectos = Proyecto::count();
+
+        return view('proyectos.index',compact('filas','campos', 'totalProyectos'));
     }
 
     /**

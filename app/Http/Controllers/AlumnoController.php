@@ -18,7 +18,10 @@ class AlumnoController extends Controller
         $exclude =["created_at","updated_at"];
         $campos = array_diff($campos,$exclude);
         $filas = Alumno::select($campos)->get();
-        return view('alumnos.index',compact('filas','campos'));
+
+        $totalAlumnos = Alumno::count();
+
+        return view('alumnos.index',compact('filas','campos', 'totalAlumnos'));
     }
 
     /**
