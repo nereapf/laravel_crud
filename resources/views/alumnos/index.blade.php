@@ -6,7 +6,7 @@
         </h1>
     </div>
     <div class="flex justify-center my-4">
-        <input type="text" id="buscar" placeholder="🔍 Buscar alumno..."
+        <input type="text" id="buscar" placeholder="🔍 {{ __('Buscar alumno...') }}"
                class="w-1/3 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-moradoOscuro">
     </div>
     <div class="flex justify-center mt-5 mb-20">

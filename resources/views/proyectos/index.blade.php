@@ -14,7 +14,7 @@
             {{ __('Administración de proyectos de la base de datos') }}</h1>
     </div>
     <div class="flex justify-center my-4">
-        <input type="text" id="buscar" placeholder="🔍 Buscar proyecto..."
+        <input type="text" id="buscar" placeholder="🔍 {{ __('Buscar proyecto...') }}"
                class="w-1/3 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-moradoOscuro">
     </div>
     <div class="flex justify-center mt-5 mb-20">
