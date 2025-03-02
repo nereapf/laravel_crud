@@ -13,6 +13,10 @@
         <h1 class="text-2xl font-bold text-moradoOscuro text-center mr-32 flex-1">
             {{ __('Administración de proyectos de la base de datos') }}</h1>
     </div>
+    <div class="flex justify-center my-4">
+        <input type="text" id="buscar" placeholder="🔍 Buscar proyecto..."
+               class="w-1/3 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-moradoOscuro">
+    </div>
     <div class="flex justify-center mt-5 mb-20">
         <table class="w-3/4 border shadow-lg rounded-lg overflow-hidden">
             <thead>
@@ -25,7 +29,7 @@
             </thead>
             <tbody>
             @foreach($filas as $fila)
-                <tr class="border-t-2 border-moradoClaro first:border-none">
+                <tr class="proyecto border-t-2 border-moradoClaro first:border-none">
                     @foreach($campos as $campo)
                         <td class="py-2 pb-3 text-center">{{ $fila->$campo }}</td>
                     @endforeach
@@ -84,5 +88,12 @@
                 }
             })
         }
+
+        document.getElementById("buscar").addEventListener("input", function () {
+            let texto = this.value.toLowerCase();
+            document.querySelectorAll(".proyecto").forEach((row) => {
+                row.style.display = row.textContent.toLowerCase().includes(texto) ? "" : "none";
+            });
+        });
     </script>
 </x-layouts.layout>

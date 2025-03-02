@@ -186,6 +186,7 @@ se añadan a ese proyecto de 1 a 5 alumnos participantes. A través del *control
 Proyectos en la función STORE se añade la creación de un numero random de alumnos a ese
 proyecto asignandole la clave foranea y a través del *factory* del alumno crearemos los datos
 aleatorios.
+
 ### Visualización de los alumnos
 Junto a la relación de las tablas también vamos a crear una sección para visualizar la tabla
 de alumnos de la base de datos para ver todos los alumnos que participan en algun proyecto.
@@ -196,3 +197,16 @@ y poder mostrarlos y en *web.php* añadir la ruta con el controlador para poder 
 ellos.
 Y finalmente para poder accceder a esa tabla es decir ver el index, en el layout del nav, 
 en el boton de alumnos implementamos la ruta alumnos.index.
+
+
+## Implementación de funcionalidades
+Para lograr una página más visual y organizada, vamos a agregar a las tablas tanto un
+buscador por nombre de los proyectos y alumnos, como un contador de los mismos.
+
+### Buscador de proyectos y alumnos
+En el index donde se ubica la tabla se añade el input para introducir el proyecto o alumno
+a buscar y junto a eso en ese mismo index se implementa un addEventListener de javascript
+para que recoga el texto introducido en el input y ejecute una funcion para recoger todas
+las filas de la tabla e ir comparandolas con el texto introducido cada vez que se escribe
+en el input, para mostrarlo con display o por el contrario no mostrarlos.
+Esto lo realizaremos tanto en la tabla de proyectos como en la de los alumnos.
